@@ -5,24 +5,17 @@ function checkAnswer(){
 
     // retrieve the user's answer
 
-    const selectedRadioButton = document.querySelector('input[name="quiz"]:checked');
+    const userAnswer = document.querySelector('input[name="quiz"]:checked').value;
 
-    let userAnswer = "";
-    
-    if(selectedRadioButton){
-        userAnswer=selectedRadioButton.value;
-    }
+   
 
     // compare the user's answer with the correct Answer
 
-    const feedbackElement = document.getElementById('feedback');
-
-    if(userAnswer=== correctAnswer){
-        feedbackElement.textContent="correct!Well done";
+    if(userAnswer === correctAnswer){
+        document.getElementById("feedback").textContent = "Correct! Well done."
     }else{
-        feedbackElement.textContent="That's incorrect . Try again !"
+         document.getElementById("feedback").textContent = "That's incorrect. Try again!"
     }
 }
 
-const SubmitButton = document.getElementById('submit-answer');
-SubmitButton.addEventListener('click',checkAnswer);
+document.getElementById('submit-answer').addEventListener('click',checkAnswer);
