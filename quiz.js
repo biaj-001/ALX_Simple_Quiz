@@ -3,11 +3,13 @@ function checkAnswer() {
     const correctAnswer = "4";
 
     // Step 2: Retrieve the user's selected answer
-    const selectedOption = document.querySelector('input[name="quiz"]:checked');
+    const selectedRadioButton = document.querySelector('input[name="quiz"]:checked');
+
+    let userAnswer ='';
 
     // Step 3: Check if an option was selected
-    if (selectedOption) {
-        const userAnswer = selectedOption.value;
+    if (selectedRadioButton) {
+        const userAnswer = selectedRadioButton.value; }
 
         // Step 4: Compare user's answer with the correct answer
         const feedbackElement = document.getElementById("feedback");
@@ -16,7 +18,7 @@ function checkAnswer() {
         } else {
             feedbackElement.textContent = "That's incorrect. Try again!";
         }
-    } else {
+    
         // Handle case when no option is selected
         document.getElementById("feedback").textContent = "Please select an answer.";
     }
