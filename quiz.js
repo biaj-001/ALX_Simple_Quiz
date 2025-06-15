@@ -3,7 +3,20 @@ function checkAnswer(){
 
     const correctAnswer = "4";
 
+
+     const selectedRadioButton = document.querySelector('input[name="quiz"]:checked');
+
     // retrieve the user's answer
+    let userAnswer = "";
+    
+    if(selectedRadioButton){
+        userAnswer=selectedRadioButton.value;
+    }
+
+    // compare the user's answer with the correct Answer
+
+    const feedbackElement = document.getElementById('feedback');
+
 
     const userAnswer = document.querySelector('input[name="quiz"]:checked').value;
 
@@ -11,9 +24,10 @@ function checkAnswer(){
     // compare the user's answer with the correct Answer
 
     if(userAnswer === correctAnswer){
-        document.getElementById("feedback").textContent = "Correct! Well done."
+        
+          feedbackElement.textContent="correct!Well done";
     }else{
-         document.getElementById("feedback").textContent = "That's incorrect. Try again!"
+        feedbackElement.textContent="That's incorrect . Try again !"
     }
 }
 
