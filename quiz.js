@@ -7,7 +7,6 @@ function checkAnswer(){
 
     const userAnswer = document.querySelector('input[name="quiz"]:checked').value;
 
-   
 
     // compare the user's answer with the correct Answer
 
